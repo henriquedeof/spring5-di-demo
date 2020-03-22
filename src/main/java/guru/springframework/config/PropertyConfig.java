@@ -2,14 +2,9 @@ package guru.springframework.config;
 
 import guru.springframework.examplebeans.FakeDataSource;
 import guru.springframework.examplebeans.FakeJmsBroker;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})//annotation that indicates shows which property files are read by the system. OLD FORMAT
@@ -22,8 +17,8 @@ import org.springframework.core.env.Environment;
 // So, I just need to use the application.properties file, which is automatically loaded by the Spring Boot.
 public class PropertyConfig {
 
-    @Autowired
-    private Environment env; //example of object which can get Environment Variables values.
+//    @Autowired
+//    private Environment env; //example of object which can get Environment Variables values.
 
     @Value("${guru.user}")
     private String user;
@@ -46,7 +41,8 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("USERNAME"));//example of getting a value from Environment Property. It also overrides a property file.
+//      fakeDataSource.setUser(env.getProperty("USERNAME"));//example of getting a value from Environment Property. It also overrides a property file.
+        fakeDataSource.setUser(this.user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(dburl);
 
