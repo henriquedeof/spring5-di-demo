@@ -13,10 +13,13 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})//annotation that indicates shows which property files are read by the system. OLD FORMAT
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:datasource.properties"),
+//        @PropertySource("classpath:jms.properties")
+//})
+
+//NOTE: If I am not using the annotations above, means that I am building a pure Spring Boot application.
+// So, I just need to use the application.properties file, which is automatically loaded by the Spring Boot.
 public class PropertyConfig {
 
     @Autowired
@@ -60,9 +63,9 @@ public class PropertyConfig {
         return fakeJmsBroker;
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties(){//This class is reading the property file
-        return new PropertySourcesPlaceholderConfigurer();
-    }
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer properties(){//This class is reading the property file
+//        return new PropertySourcesPlaceholderConfigurer();
+//    }
 
 }
