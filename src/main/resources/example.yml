@@ -1,0 +1,36 @@
+# Example of comment
+
+name: Henrique
+
+names: #Comment 2
+  - Jonh
+  - Paul
+  - James
+
+pound_sign: "#"
+
+book:
+  author: Author 1
+  publisher: Publisher 1
+
+truth: yes
+
+another_truth: yes
+
+more_true: yes
+
+false: no #no, false, FALSE
+
+string_value: "This is it's quote"
+
+colon_string: "my courses: one, two, three"
+
+include_new_lines:
+  asdslkjlkj lkajsdjk
+  oiuqwieuw urytfhg
+  zkcjvh poirtnkjdj
+
+ignore_new_lines:
+  this is
+  just an example
+  of a long string
